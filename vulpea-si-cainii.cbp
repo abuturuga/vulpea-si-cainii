@@ -34,8 +34,12 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="include/Field.h" />
+		<Unit filename="include/GameObject.h" />
+		<Unit filename="include/GameState.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Field.cpp" />
+		<Unit filename="src/GameObject.cpp" />
+		<Unit filename="src/GameState.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

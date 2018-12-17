@@ -1,24 +1,25 @@
 # depslib dependency file v1.0
-1545078741 source:c:\users\butur\onedrive\desktop\vulpea-si-cainii\main.cpp
+1545079572 source:c:\users\butur\onedrive\desktop\vulpea-si-cainii\main.cpp
 	<iostream>
 	<graphics.h>
 	<winbgim.h>
 	"GameState.h"
 	"Field.h"
 
-1545077874 source:c:\users\butur\onedrive\desktop\vulpea-si-cainii\src\field.cpp
+1545078785 source:c:\users\butur\onedrive\desktop\vulpea-si-cainii\src\field.cpp
 	"Field.h"
 	<iostream>
 	<graphics.h>
 	<winbgim.h>
+	<math.h>
 
 1545078597 c:\users\butur\onedrive\desktop\vulpea-si-cainii\include\field.h
 	"GameState.h"
 
-1545076767 c:\users\butur\onedrive\desktop\vulpea-si-cainii\include\gamestate.h
+1545079120 c:\users\butur\onedrive\desktop\vulpea-si-cainii\include\gamestate.h
 	"GameObject.h"
 
-1545078272 source:c:\users\butur\onedrive\desktop\vulpea-si-cainii\src\gamestate.cpp
+1545079102 source:c:\users\butur\onedrive\desktop\vulpea-si-cainii\src\gamestate.cpp
 	"GameState.h"
 
 1545072390 c:\users\butur\onedrive\desktop\vulpea-si-cainii\include\gameobject.h

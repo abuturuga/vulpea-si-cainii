@@ -13,20 +13,29 @@ const int HEIGHT = 600;
 int main()
 {
     initwindow(WIDTH, HEIGHT);
+
     GameState* gameState = new GameState();
     setbkcolor(GREEN);
     Field* field = new Field();
+    field->setDimensions(WIDTH, HEIGHT);
 
     int x, y;
     do {
+        cleardevice();
         if (ismouseclick(WM_LBUTTONDOWN)) {
             clearmouseclick(WM_LBUTTONDOWN);
-            x=mousex(); y=mousey();
-            cout << field->getFieldX(x) << " " << field->getFieldY(y) << endl;
+            x = field->getFieldX(mousex());
+            y = field->getFieldY(mousey());
+
         }
-        field->setDimensions(WIDTH, HEIGHT);
+        setcolor(BLUE);
+        setbkcolor(BLUE);
+        rectangle(0,0, WIDTH, HEIGHT);
+
+        setcolor(WHITE);
         field->Draw();
         field->renderGameState(gameState);
+        Sleep(1000);
     } while(true);
 
     closegraph();

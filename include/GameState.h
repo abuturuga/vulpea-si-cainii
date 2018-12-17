@@ -10,9 +10,11 @@ class GameState
         void setFox(int x, int y);
         GameObject* getFox();
         GameObject* getDog(int index);
-    protected:
+        int GetTurn();
+        void NextTurn();
 
     private:
+        int turn;
         GameObject* fox;
         GameObject* dogs[4];
 };
