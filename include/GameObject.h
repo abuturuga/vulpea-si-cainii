@@ -1,6 +1,7 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
+#include <iostream>
 
 class GameObject
 {
@@ -12,6 +13,7 @@ class GameObject
         void setY(int y);
         int getX();
         int getY();
+        bool HasCoords(int x, int y);
     protected:
 
     private:

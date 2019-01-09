@@ -53,14 +53,18 @@ void Field::renderGameState(GameState* gameState) {
     float x = fox->getX() * this->rowOffset - xOffset;
     float y = fox->getY() * this->colOffset - yOffset;
 
+    setfillstyle(SOLID_FILL, RED);
     circle(x, y, circleRadius);
+    floodfill(x, y, WHITE);
 
     GameObject* dog;
     for(int i = 0; i < 4; i++) {
         dog = gameState->getDog(i);
         x = dog->getX() * this->rowOffset - xOffset;
         y = dog->getY() * this->colOffset - yOffset;
+        setfillstyle(SOLID_FILL, GREEN);
         circle(x, y, circleRadius);
+        floodfill(x, y, WHITE);
     }
 }
 
@@ -71,3 +75,5 @@ int Field::getFieldX(int mouseX) {
 int Field::getFieldY(int mouseY) {
     return floor(mouseY / this->colOffset) + 1;
 }
+
+

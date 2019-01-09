@@ -30,3 +30,7 @@ int GameObject::getX() {
 int GameObject::getY() {
     return this->y;
 }
+
+bool GameObject::HasCoords(int x, int y) {
+    return this->x == x && this->y == y;
+}

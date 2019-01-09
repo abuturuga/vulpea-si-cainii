@@ -10,34 +10,42 @@ using namespace std;
 const int WIDTH = 600;
 const int HEIGHT = 600;
 
-int main()
-{
-    initwindow(WIDTH, HEIGHT);
+void render(Field* field, GameState* gameState, int x, int y) {
+    cleardevice();
+    setbkcolor(BLUE);
 
-    GameState* gameState = new GameState();
-    setbkcolor(GREEN);
-    Field* field = new Field();
-    field->setDimensions(WIDTH, HEIGHT);
+    setcolor(WHITE);
+    field->Draw();
+    field->renderGameState(gameState);
+}
 
+void game_loop(Field* field, GameState* gameState) {
     int x, y;
+    gameState->winner = -1;
+    gameState->gameEnd = false;
+    render(field, gameState, 0, 0);
     do {
-        cleardevice();
         if (ismouseclick(WM_LBUTTONDOWN)) {
             clearmouseclick(WM_LBUTTONDOWN);
             x = field->getFieldX(mousex());
             y = field->getFieldY(mousey());
-
+            gameState->UpdatePlayer(x, y);
+            render(field, gameState, x, y);
         }
-        setcolor(BLUE);
-        setbkcolor(BLUE);
-        rectangle(0,0, WIDTH, HEIGHT);
-
-        setcolor(WHITE);
-        field->Draw();
-        field->renderGameState(gameState);
-        Sleep(1000);
     } while(true);
+}
+
+int main()
+{
+    initwindow(WIDTH, HEIGHT);
+    GameState* gameState = new GameState();
+
+    Field* field = new Field();
+    field->setDimensions(WIDTH, HEIGHT);
+
+    game_loop(field, gameState);
 
     closegraph();
+    getch();
     return 0;
 }
